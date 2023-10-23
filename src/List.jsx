@@ -1,7 +1,14 @@
 import React from "react";
+import Person from "./Person";
 
-const List = () => {
-  return <div>list</div>;
+const List = ({ people }) => {
+  return (
+    <section>
+      {people.map((person) => {
+        return <Person key={person.id} {...person} />;
+      })}
+    </section>
+  );
 };
 
 export default List;
